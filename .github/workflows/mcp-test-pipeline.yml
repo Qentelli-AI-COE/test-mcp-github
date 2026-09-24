@@ -1,0 +1,15 @@
+name: mcp-test-pipeline
+on:
+  workflow_dispatch:
+    inputs:
+      note:
+        description: free-text note
+        required: false
+        default: hello
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "note=${{ inputs.note }}"
+      - run: sleep 45
+      - run: echo "done"
